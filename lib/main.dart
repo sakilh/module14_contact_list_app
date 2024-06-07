@@ -148,14 +148,36 @@ class _ContactListScreenState extends State<ContactListScreen> {
                         },
                       );
                     },
-                    child: ListTile(
-                      title: Text(
-                        _contacts[index]['name']!,
-                        style: TextStyle(color: Colors.black),
+                    child: Container(
+                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 5),
+                      padding: const EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: Color(0xFFeeeeee),
+                        border: Border(
+                          bottom: BorderSide(color: Color(0xFFededed)),
+                        ),
                       ),
-                      subtitle: Text(
-                        _contacts[index]['number']!,
-                        style: TextStyle(color: Colors.black),
+                      child: Row(
+                        children: [
+                          Icon(Icons.person, color: Color(0xFF735547)),
+                          SizedBox(width: 16),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  _contacts[index]['name']!,
+                                  style: TextStyle(color: Color(0xFFd47274), fontSize: 22,),
+                                ),
+                                Text(
+                                  _contacts[index]['number']!,
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Icon(Icons.phone, color: Color(0xFF4997f1)),
+                        ],
                       ),
                     ),
                   );
